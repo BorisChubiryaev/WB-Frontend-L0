@@ -38,3 +38,28 @@
     background: rgba(255,255,255,.5);
 }
 
+.header__navbar-menu {
+    display: flex;
+}
+
+.navbar-menu__item {
+    position: relative;
+}
+
+.navbar-menu__icon {
+    display: block;
+    height: 27px;
+    margin: 0 auto 6px;
+    position: relative;
+}
+
+.navbar-menu__icon--profile {
+    width: 19px;
+    background: url('../images/iconProfile.svg') center/contain no-repeat;
+}
+
+.navbar-menu__icon--basket {
+    width: 19px;
+    background: url('../images/iconBasket.png') center/contain no-repeat;
+
+}
