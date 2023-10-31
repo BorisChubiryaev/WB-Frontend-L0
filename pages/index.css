@@ -1,0 +1,40 @@
+@import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/link/link.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__burger/header__burger.css);
+@import url(../blocks/header/__lang/header__lang.css);
+@import url(../blocks/header/__link/header__link.css);
+@import url(../blocks/header/__link/_active/header__link_active.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+.search-catalog__block {
+    position: relative;
+}
+
+.search-catalog__input {
+    font-size: 18px;
+    line-height: 24px;
+    transition: background .3s ease 0s;
+    color: rgba(255,255,255,.5);
+    width: 100%;
+    padding: 16px 120px 16px 44px;
+    margin: 0;
+    border-radius: 56px;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+    appearance: none;
+    border: none;
+}
+
+.search-catalog__input:hover {
+    background: rgba(255,255,255,.5);
+}
+
