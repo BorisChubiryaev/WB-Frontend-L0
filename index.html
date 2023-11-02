@@ -16,7 +16,6 @@
             aria-label="Навигация по сайту"
           >
             <img
-              type="button"
               aria-label="Навигация по сайту"
               src="./images/header__burger.svg"
               alt="Кнопка открытия бокового меню"
@@ -31,26 +30,93 @@
         <div class="header__search-catalog">
           <div class="search-catalog__block">
             <input class="search-catalog__input" placeholder="Я ищу..." />
+            <button class="search-catalog__btn"></button>
           </div>
         </div>
 
         <div class="header__navbar-menu">
           <div class="navbar-pc__item">
             <a class="navbar-menu__link" href="#">
-              <span class="navbar-menu__icon navbar-menu__icon--profile"></span>
-              Адреса
+              <span class="navbar-menu__icon navbar-menu__icon--profile">
+                <img src="./images/iconProfile.svg" alt="Профиль" />
+              </span>
+              Профиль
             </a>
           </div>
           <div class="navbar-pc__item">
             <a class="navbar-menu__link" href="#">
-              <span class="navbar-menu__icon navbar-menu__icon--basket"></span>
+              <span class="navbar-menu__icon navbar-menu__icon--basket">
+                <img src="./images/iconBasket.svg" alt="Корзина" />
+              </span>
               Корзина
             </a>
           </div>
         </div>
       </header>
 
-      <main></main>
+      <main class="main">
+        <div class="main-container">
+          <div class="basket-form__content">
+            <h1 class="content__header">Корзина</h1>
+            <div class="content__title">
+              <div class="title__checkbox">
+                <input
+                  class="checkbox__input"
+                  type="checkbox"
+                  name="checkbox_0"
+                  id="checkbox_0"
+                />
+              </div>
+              <div class="title__spoiler">
+                <span class="spoiler__title">Выбрать все</span>
+                <div class="spoiler__image">
+                  <img
+                    class="spoiler__image"
+                    src="./images/iconSpoiler.svg"
+                    alt="Кнопка раскрытия списка корзины"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="content__position">
+              <div class="position__block">
+                <div class="block__product">
+                  <div class="product__checkbox">
+                    <input
+                      class="checkbox__input"
+                      type="checkbox"
+                      name="checkbox_1"
+                      id="checkbox_1"
+                    />
+                  </div>
+                  <div class="product__photo">
+                    <img class="photo_product" src="./images/product1.png" />
+                  </div>
+                  <div class="product__description">
+                    <p class="description__title">Футболка UZcotton мужская</p>
+                    <div class="description__parametres">
+                      <p class="parametres__color">Цвет: белый</p>
+                      <p class="parametres__size">Размер: 56</p>
+                    </div>
+                    <p class="description__owner">Коледино WB</p>
+                    <div class="description__company">
+                      <p class="company__name">Вайлдберриз</p>
+                      <a href="#" class="company__about">
+                        <img src="./images/aboutIcon.svg" alt="О компании"/>
+                        <div class="about__block" style="opacity: 0; visibility: hidden;">
+                          <div class="block__title">OOO Вайлдберриз</div>
+                          <div class="block__info">ОГРН: 5167746237148</div>
+                          <div class="block__adress">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34</div>
+                       </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
 
       <footer class="footer">
         <p class="footer__copyright">© 2023 ООО «Товары и точка»</p>
