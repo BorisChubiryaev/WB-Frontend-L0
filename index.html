@@ -6,121 +6,421 @@
     <title>Товары и точка</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-  <body>
-    <div class="page">
-      <header class="header">
-        <div class="header__nav-element">
-          <button
-            class="header__burger"
-            type="button"
-            aria-label="Навигация по сайту"
-          >
-            <img
-              aria-label="Навигация по сайту"
-              src="./images/header__burger.svg"
-              alt="Кнопка открытия бокового меню"
-            />
-          </button>
-          <img
-            class="header__logo"
-            src="./images/logo/logo_main.svg"
-            alt="Карта России"
-          />
-        </div>
-        <div class="header__search-catalog">
-          <div class="search-catalog__block">
-            <input class="search-catalog__input" placeholder="Я ищу..." />
-            <button class="search-catalog__btn"></button>
+  <body class="body">
+    <div class="wrapper">
+       <header id="header" class="header">
+          <div class="header__container">
+             <div class="header__catalog catalog">
+                <a href="#" class="catalog__item">
+                   <span></span>
+                </a>
+             </div>
+             <div class="header__title">товары и точка</div>
+             <div class="header__search search">
+                   <input class="search__box" type="text" name="" placeholder="Я ищу...">
+                   <a href="#" class="search__btn">
+                      <img src="./images/Search.svg" alt="Поиск">
+                   </a>
+             </div>
+             <div class="header__item">
+                <img src="images/item__04.png" alt="item">
+             </div>
+             <div class="header__profile profile">
+                <a href="#" class="profile__item">
+                   <img src="./images/iconProfile.svg" alt="Профиль">
+                </a>
+                <a href="#" class="profile__text">Профиль</a>
+             </div>
+             <div class="header__shopCart shopCart">
+                <div id="shopCart-count" class="shopCart__count count-top">0</div>
+                <a href="#" class="shopCart__item">
+                   <img src="./images/iconBasket.svg" alt="Корзина">
+                </a>
+                <a href="#" class="shopCart__text">Корзина</a>
+             </div>
           </div>
-        </div>
+       </header>
+       <div id="fix" class="main_block_fix"></div>
+       <main class="main">
+          <div class="main__container">
+             <!-- Корзина -->
+             <div class="main__shop shop">
+                <h1 class="shop__title">Корзина</h1>
+                <!-- Товары в наличии -->
+                <div class="shop__block block">
+                   <!-- Спойлер -->
+                   <div class="block__title title">
+                      <div class="title__checkbox">
+                         <input onclick="checkAll(), validateAll()" class="checkbox__input" id="checkbox_1" type="checkbox" name="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                      </div>
+                      <div class="title__spoiler">
+                         <div class="title__text">Выбрать все</div>
+                         <div class="title__item">
+                            <img src="./images/iconSpoiler.svg" alt="Кнопка разворота окна">
+                         </div>
+                      </div>
+                   </div>
+                   <!-- Блок с товарами -->
+                   <div class="block__content content-block">
+ 
+                      <div class="content-block-1">
+                         <div class="content-block__check top_center">
+                            <input onclick="validate(), checkNoAll(), shopCart()" class="checkbox__input" id="checkbox_2" type="checkbox" name="checkbox_2">
+                            <label  class="checkbox__label " for="checkbox_2"></label>
+                         </div>
+    
+                         <div class="content-block__img">
+                            <img src="./images/product1.png" alt="Фото товара">
+                            <div class="content-block__img_size">56</div>
+                         </div>
+ 
+                         <div class="content-block__review review-block">
+                            <div class="review-block__title">Футболка UZcotton мужская</div>
+                            <div class="review-block__charact">
+                               <div class="review-block__color">Цвет: белый</div>
+                               <div class="review-block__size">Размер: 56</div>
+                            </div>
+                            <div class="review-block__storage">Коледино WB</div>
+                            <div class="review-block__sel">
+                               <div class="review-block__seller">OOO Вайлдберриз</div>
+                               <a href="" class="review-block__info">
+                                  <img src="./images/aboutIcon.svg" alt="О компании">
+                                  <div class="review-block__info-text">
+                                     <div class="info-text__title">OOO Вайлдберриз</div>
+                                     <div class="info-text__info">ОГРН: 5167746237148</div>
+                                     <div class="info-text__adress">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</div>
+                                  </div>
+                               </a>
+                            </div>
+                         </div>
+    
+                         <div class="content-block__count count-block count-block-margin">
+                            <div class="count-block__counter counter-block">
+                               <div data-id="tshirt" class="counter-block__minus minus no_act_m">–
+                               </div>
+                               <div id="counter" class="counter-block__vol">1</div>
+                               <div data-id="tshirt" class="counter-block__plus plus act_p">+
+                               </div>
+                            </div>
+                            <div class="count-block__balance balance-block balance-block1">
+                               <div class="balance-block__title">Осталось</div>
+                               <div id="kol" class="balance-block__kol">2</div>
+                               <div class="balance-block__val">шт.</div>
+                            </div>
+                            <div class="count-block__icon">
+                               <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                               <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                               <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                               <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
+                            </div>
+                         </div>
+    
+                         <div class="content-block__price price-block ">
+                            <div class="price-block__pricefin">
+                               <div id="price1" class="pricefin__price">522</div>
+                               <div class="pricefin__val">сом</div>
+                            </div>
+                            <div class="price-block__price">
+                               <div id="priceaftersale" class="price__price">1051</div>
+                               <div class="price__val">сом</div>
+                               <div class="price-block__price-text">
+                                  <div class="price-text__top">
+                                     <div class="price-text__top-title">Скидка 55%</div>
+                                     <div class="price-text__top-sale">-300 сом</div>
+                                  </div>
+                                  <div class="price-text__but">
+                                     <div class="price-text__but-title">Скидка покупателя 10%</div>
+                                     <div class="price-text__but-sale">-30 сом</div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+ 
+                      <div class="content-block-2 cb2_marg">
+                         <div class="content-block__check top_center">
+                            <input onclick="validatePhone(), checkNoAll(), shopCart()" class="checkbox__input" id="checkbox_3" type="checkbox" name="checkbox_3">
+                            <label class="checkbox__label" for="checkbox_3"></label>
+                         </div>
+                      
+                         <div class="content-block__img">
+                            <img src="./images/product2.png" alt="Фото товара">
+                         </div>
+ 
+                         <div class="content-block__review review-block">
+                            <div class="review-block__title">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</div>
+                            <div class="review-block__charact">
+                               <div class="review-block__color">Цвет: прозрачный</div>
+                            </div>
+                            <div class="review-block__storage">Коледино WB</div>
+                            <div class="review-block__sel">
+                               <div class="review-block__seller">OOO Мегапрофстиль</div>
+                               <a href="" class="review-block__info">
+                                  <img src="./images/aboutIcon.svg" alt="О компании">
+                                  <div class="review-block__info-text">
+                                     <div class="info-text__title">OOO «МЕГАПРОФСТИЛЬ»</div>
+                                     <div class="info-text__info">ОГРН: 5167746237148</div>
+                                     <div class="info-text__adress">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34
+                                     </div>
+                                  </div>
+                               </a>
+                            </div>
+                         </div>
+                      
+                         <div class="content-block__count count-block">
+                            <div class="count-block__counter counter-block">
+                               <div data-id="phone" class="counter-block__minus minus act_m-2">–
+                               </div>
+                               <div id="counter2" class="counter-block__vol">200</div>
+                               <div data-id="phone" class="counter-block__plus plus act_p-2">+
+                               </div>
+                            </div>
+                            <div class="count-block__balance balance-block balance-block2">
+                               <div class="balance-block__title">Осталось</div>
+                               <div id="kol2" class="balance-block__kol">300</div>
+                               <div class="balance-block__val">шт.</div>
+                            </div>
+                            <div class="count-block__icon">
+                              <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                              <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                              <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                              <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
+                           </div>
 
-        <div class="header__navbar-menu">
-          <div class="navbar-pc__item">
-            <a class="navbar-menu__link" href="#">
-              <span class="navbar-menu__icon navbar-menu__icon--profile">
-                <img src="./images/iconProfile.svg" alt="Профиль" />
-              </span>
-              Профиль
-            </a>
-          </div>
-          <div class="navbar-pc__item">
-            <a class="navbar-menu__link" href="#">
-              <span class="navbar-menu__icon navbar-menu__icon--basket">
-                <img src="./images/iconBasket.svg" alt="Корзина" />
-              </span>
-              Корзина
-            </a>
-          </div>
-        </div>
-      </header>
+                         </div>
+                      
+                         <div class="content-block__price price-block">
+                            <div class="price-block__pricefin">
+                               <div id="price2" class="pricefin__price price_min">2100047</div>
+                               <div class="pricefin__val price_min">сом</div>
+                            </div>
+                            <div class="price-block__price">
+                               <div id="priceaftersale2" class="price__price">2300047</div>
+                               <div class="price__val">сом</div>
+                               <div class="price-block__price-text">
+                                  <div class="price-text__top">
+                                     <div class="price-text__top-title">Скидка 55%</div>
+                                     <div class="price-text__top-sale">-300 сом</div>
+                                  </div>
+                                  <div class="price-text__but">
+                                     <div class="price-text__but-title">Скидка покупателя 10%</div>
+                                     <div class="price-text__but-sale">-30 сом</div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+ 
+                      <div class="content-block-3">
+                         <div class="content-block__check top_center">
+                            <input onclick="validatePen(), checkNoAll(), shopCart()" class="checkbox__input" id="checkbox_4" type="checkbox" name="checkbox_4">
+                            <label class="checkbox__label" for="checkbox_4"></label>
+                         </div>
+                      
+                         <div class="content-block__img">
+                            <img src="./images/product3.png" alt="Фото товара">
+                         </div>
+ 
+                         <div class="content-block__review review-block">
+                            <div class="review-block__title">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, </br> Faber-Castell</div>
+                            <div class="review-block__storage">Коледино WB</div>
+                            <div class="review-block__sel">
+                               <div class="review-block__seller">OOO Вайлдберриз</div>
+                               <a href="" class="review-block__info">
+                                  <img src="./images/aboutIcon.svg" alt="О компании">
+                                  <div class="review-block__info-text">
+                                     <div class="info-text__title">OOO Вайлдберриз</div>
+                                     <div class="info-text__info">ОГРН: 5167746237148</div>
+                                     <div class="info-text__adress">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34
+                                     </div>
+                                  </div>
+                               </a>
+                            </div>
+                         </div>
+                      
+                         <div class="content-block__count count-block count-block-margin">
+                            <div class="count-block__counter counter-block">
+                               <div data-id="pen" class="counter-block__minus minus act-m3">–
+                               </div>
+                               <div id="counter3" class="counter-block__vol">2</div>
+                               <div data-id="pen" class="counter-block__plus plus no-act-p3">+
+                               </div>
+                            </div>
+                            <div class="count-block__balance balance-block balance-block3">
+                               <div class="balance-block__title">Осталось</div>
+                               <div id="kol3" class="balance-block__kol">2</div>
+                               <div class="balance-block__val">шт.</div>
+                            </div>
+                            <div class="count-block__icon">
+                              <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                              <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                              <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                              <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
+                           </div>
 
-      <main class="main">
-        <div class="main-container">
-          <div class="basket-form__content">
-            <h1 class="content__header">Корзина</h1>
-            <div class="content__title">
-              <div class="title__checkbox">
-                <input
-                  class="checkbox__input"
-                  type="checkbox"
-                  name="checkbox_0"
-                  id="checkbox_0"
-                />
-              </div>
-              <div class="title__spoiler">
-                <span class="spoiler__title">Выбрать все</span>
-                <div class="spoiler__image">
-                  <img
-                    class="spoiler__image"
-                    src="./images/iconSpoiler.svg"
-                    alt="Кнопка раскрытия списка корзины"
-                  />
+                         </div>
+                      
+                         <div class="content-block__price price-block">
+                            <div class="price-block__pricefin">
+                               <div id="price3" class="pricefin__price">494</div>
+                               <div class="pricefin__val">сом</div>
+                            </div>
+                            <div class="price-block__price">
+                               <div id="priceaftersale3" class="price__price">950</div>
+                               <div class="price__val">сом</div>
+                               <div class="price-block__price-text">
+                                  <div class="price-text__top">
+                                     <div class="price-text__top-title">Скидка 55%</div>
+                                     <div class="price-text__top-sale">-300 сом</div>
+                                  </div>
+                                  <div class="price-text__but">
+                                     <div class="price-text__but-title">Скидка покупателя 10%</div>
+                                     <div class="price-text__but-sale">-30 сом</div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="content__position">
-              <div class="position__block">
-                <div class="block__product">
-                  <div class="product__checkbox">
-                    <input
-                      class="checkbox__input"
-                      type="checkbox"
-                      name="checkbox_1"
-                      id="checkbox_1"
-                    />
-                  </div>
-                  <div class="product__photo">
-                    <img class="photo_product" src="./images/product1.png" />
-                  </div>
-                  <div class="product__description">
-                    <p class="description__title">Футболка UZcotton мужская</p>
-                    <div class="description__parametres">
-                      <p class="parametres__color">Цвет: белый</p>
-                      <p class="parametres__size">Размер: 56</p>
+                <!-- Отсутствующие товары -->
+                <div class="absence__block block">
+                   <!-- спойлер -->
+                   <div class="block__title title">
+                      <div class="title__spoiler add-marg">
+                         <div class="title__text add-weight">Отсутствуют · 3 товара</div>
+                         <div class="title__item">
+                            <img src="./images/iconSpoiler.svg" alt="Кнопка разворота окна">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="block__content content-block absence">
+                      <div class="content-block-1 cb1_add-mar">               
+                         <div class="content-block__img margin-none">
+                            <img src="./images/product4lost.png" alt="Фото товара">
+                            <div class="content-block__img_size">56</div>
+                         </div>
+                         <div class="content-block__review review-block absence_block">
+                            <div class="review-block__title">Футболка UZcotton мужская</div>
+                            <div class="review-block__charact">
+                               <div class="review-block__color">Цвет: белый</div>
+                               <div class="review-block__size">Размер: 56</div>
+                            </div>
+                         </div>
+                         <div class="content-block__count count-block indent">
+                          <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                          <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                          <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                          <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
                     </div>
-                    <p class="description__owner">Коледино WB</p>
-                    <div class="description__company">
-                      <p class="company__name">Вайлдберриз</p>
-                      <a href="#" class="company__about">
-                        <img src="./images/aboutIcon.svg" alt="О компании"/>
-                        <div class="about__block" style="opacity: 0; visibility: hidden;">
-                          <div class="block__title">OOO Вайлдберриз</div>
-                          <div class="block__info">ОГРН: 5167746237148</div>
-                          <div class="block__adress">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34</div>
-                       </div>
-                      </a>
+                         <div class="content-block__price price-block"></div>
+                      </div>
+                
+                      <div class="content-block-2 cb2_marg cb1_add-mar">               
+                         <div class="content-block__img margin-none">
+                            <img src="./images/product5lost.png" alt="Фото товара">
+                         </div>
+                         <div class="content-block__review  review-block absence_block">
+                            <div class="review-block__title add-weig">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
+                               на Apple iPhone XR, MobiSafe</div>
+                            <div class="review-block__charact">
+                               <div class="review-block__color">Цвет: прозрачный</div>
+                            </div>
+                         </div>
+                         <div class="content-block__count count-block indent indent2">
+                          <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                          <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                          <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                          <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
                     </div>
-                  </div>
+                         <div class="content-block__price price-block"></div>
+                      </div>
+                
+                      <div class="content-block-3">
+                         <div class="content-block__img margin-none">
+                            <img src="./images/product6lost.png" alt="img">
+                         </div>
+                         <div class="content-block__review review-block absence_block">
+                            <div class="review-block__title add-weig">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                               шестигранные,Faber-Castell</div>
+                         </div>
+                         <div class="content-block__count count-block indent indent3">
+                          <a href="#" class="icon_1"><img src="./images/LikeIcon.svg" alt="Кнопка лайка"></a>
+                          <a href="#" class="icon_1 red"><img src="./images/LikeIcon_active.svg" alt="Кнопка лайка-активная"></a>
+                          <a href="#" class="icon_2"><img src="./images/TrashIcon.svg" alt="Кнопка корзины"></a>
+                          <a href="#" class="icon_2 red"><img src="./images/TrashIcon_active.svg" alt="Кнопка корзины-активная"></a>
+                    </div>
+                         <div class="content-block__price price-block"></div>
+                      </div>
+                   </div>
                 </div>
-              </div>
-            </div>
+                <!-- Информация о доставке -->
+                <div class="delivery__block block-red">
+                   <div class="delivery__top">
+                      <div class="delivery__title">Способ доставки</div>
+                      <a href="#popup__pay" class="delivery__link">Изменить</a>
+                   </div>
+                   <div class="delivery__issue">
+                      <div class="issue__adress">
+                         <div class="issue__title title-delivery del_title_output3">Пункт выдачи</div>
+                         <div class="issue__title title-delivery del_title_output4">Курьером</div>
+                         <div class="adress__block">
+                            <div class="adress__name del_output4">Бишкек, улица Табышалиева, 57</div>
+                            <div class="adress__name del_output5">Бишкек, улица Жукеева-Пудовкина, 77/1</div>
+                            <div class="adress__name del_output6">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</div>
+                            <div class="adress__name del_output10">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</div>
+                            <div class="adress__name del_output11">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</div>
+                            <div class="adress__name del_output12">г. Бишкек, улица Табышалиева, д. 57</div>
+                            <div class="adress__info del_star">
+                               <dib class="ingo__img"><img src="./images/ratingStar.svg" alt="Значок звезды"></dib>
+                               <div class="info__rank">4.99</div>
+                               <div class="info__time">Ежедневно с 10 до 21</div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="issue__price">
+                         <div class="price__title title-delivery">Стоимость доставки</div>
+                         <div class="price__value">Бесплатно</div>
+                      </div>
+                      <div class="issue__data">
+                         <div class="data__title title-delivery data_of">5—6 февраля</div>
+                         <div class="issue__product">
+                            <div class="issue__product-icon product-icon-of">
+                               <div id="count_icon" class="issue__product-count count_icon-class">0</div>
+                               <img src="./images/product1.png" alt="Фото товара">
+                            </div>
+                            <div class="issue__product-icon product-icon-of2">
+                               <div id="count_icon2" class="issue__product-count count_icon-class2">0</div>
+                               <img src="./images/product2.png" alt="Фото товара">
+                            </div>
+                            <div class="issue__product-icon product-icon-of4">
+                               <div id="count_icon3" class="issue__product-count count_icon-class3">0</div>
+                               <img src="./images/product3.png" alt="Фото товара">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="issue__data issue__dataof add-mar">
+                         <div class="data__title title-delivery data_of2">7—8 февраля</div>
+                         <div class="issue__product">
+                            <div class="issue__product-icon product-icon-of3">
+                               <div id="count_icon4" class="issue__product-count count_icon-class4">0</div>
+                               <img src="./images/product2.png" alt="Фото товара">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="issue__info">
+                         <div class="issue__info-img"><img src="./images/confirmIcon.svg" alt="Значок подтверждения"></div>
+                         <div class="issue__info-title">Обратная доставка товаров на склад при отказе — <span class="info-title_mouse">бесплатно</span>
+                      <div class="info-title_mouse-text info-title_mouse_mar">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
           </div>
-        </div>
-      </main>
+       </main>
+    </div></body>
 
-      <footer class="footer">
-        <p class="footer__copyright">© 2023 ООО «Товары и точка»</p>
-      </footer>
-    </div>
-  </body>
+
 </html>
