@@ -1,26 +1,11 @@
 .header {
-  max-width: 1184px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 28px 48px 56px;
+    background-color: #6725A8;
+    height: 112px;
+    padding: 20px 0px 44px 0px;
 }
-
-@media screen and (max-width: 1140px) {
-  .header {
-    padding: 28px 48px 48px;
-  }
-}
-
-@media screen and (max-width: 984px) {
-  .header {
-    padding: 28px 24px 48px;
-  }
-}
-
-@media screen and (max-width: 568px) {
-  .header {
-    padding: 16px 16px 48px;
-  }
+@media (max-width: 460px) {
+    .header{
+            padding: 11px 0 0;
+            height: 80px;
+        }
 }
